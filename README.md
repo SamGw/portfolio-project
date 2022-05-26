@@ -1,4 +1,4 @@
 # PortfolioProject
 Projet Porfolio ICE
 
-Dl Angular 13 puis ouvre le repo avec visual studio code et bien spasser
+Dl Angular 13 puis ouvre le repo avec visual studio code, fais npm install et bien spasser
