@@ -14,7 +14,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
     CommonModule
   ],
   exports: [
-    NavMenuComponent
+    NavMenuComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
