@@ -11,12 +11,60 @@
     font-size: 1em;
     text-align: center;
   }
-    footer {
-      padding: 3px;
-      background-color: rgb(245, 249, 255);
-      color: rgb(43, 77, 136);
+  h3 {
+    font-size: 1em;
+    text-align: right;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .logo {          
+    display: flex;
+    justify-content: flex-start;
+  }
+  .header-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+  }
+
+  footer {
+    padding: 3px;
+    background-color: rgb(245, 249, 255);
+    color: rgb(43, 77, 136);
       
-    }
-    </style>
-<footer><p><img src="url" alt="logo_ICE"><h1 style="font-family:Poppins;" >ICE 2023</h1><p><h2 style="font-family:Poppins;">contact@tanahair.cd</h2>
-  <p><h2 style="font-family:Poppins;">@2022 EPITA. All rights reserved.</h2></footer>
+  }
+</style>
+
+
+<footer>
+  <div class="container">
+
+  <div class="logo">
+    <img src="../../../../assets/logo_ice" alt="logo_ICE">
+  </div>
+
+  <div class="header-title">
+    <h1 style="font-family:Poppins;" >ICE 2023</h1>
+    <p><h2 style="font-family:Poppins;">contact@tanahair.cd</h2>
+    <p><h2 style="font-family:Poppins;">@2022 EPITA. All rights reserved.</h2>
+  </div>
+
+  <div class="left">
+      <p><h3 style="font-family:Poppins;">Privacy Policy</h3>
+      <p><h3 style="font-family:Poppins;">Terms and Conditions</h3>
+  </div>
+  
+  </div>
+  </footer>
