@@ -3,14 +3,11 @@
 /* Poppins Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-/*  */
+/* Poppins related */
 .poppins {
     font-family: 'Poppins', sans-serif;
 }
 
-.navbar .poppins {
-    font-weight: 500;
-}
 
 .poppins .h1 {
     font-size: 2.5em;
@@ -24,7 +21,14 @@
     font-size: 0.875em;
 }
 
+/* Couleurs */
+
 /* Fond Bleu */
 .light-blue-bg {
     background-color: #f1f6ff;
+}
+
+/* Bleu foncé */
+.dark-blue {
+    color: #2B4D88;
 }

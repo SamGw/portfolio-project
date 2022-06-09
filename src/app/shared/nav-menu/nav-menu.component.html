@@ -2,12 +2,14 @@
 <nav class="navbar navbar-expand-lg navbar-light light-blue-bg">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <!-- ms-auto pour mettre les elements a droite -->
-        <div class="navbar-nav ms-auto poppins">
-          <a class="nav-link active" aria-current="page" href="#">HOME</a>
-          <a class="nav-link" href="portfolio-list">PORTFOLIOS</a>
-          <a *ngIf="isLogged" class="nav-link" href="#">MY PORTFOLIO</a>
-          <a class="nav-link" href="#">LOGIN</a>
+        <!-- ms-auto pour mettre les elements a droite -->
+        <div class="navbar-nav ms-auto poppins dark-blue">
+          <a class="nav-link" routerLink= "/home" routerLinkActive="active">HOME</a>
+          <a class="nav-link" routerLink="/portfolio-list" routerLinkActive="active" ariaCurrentWhenActive="page">PORTFOLIOS</a>
+          <!-- TODO Correct the route-->
+          <a *ngIf="isLogged" class="nav-link">MY PORTFOLIO</a> 
+          <!--  -->
+          <a class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">LOGIN</a>
         </div>
       </div>
     </div>
