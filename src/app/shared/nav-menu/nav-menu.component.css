@@ -1,0 +1,20 @@
+.navbar .poppins {
+    font-weight: 500;
+    letter-spacing: 6.33px;
+}
+
+.dark-blue .nav-link {
+    color: #2B4D88!important;
+}
+
+.nav-link.active {
+    border-bottom: 2px dashed;
+}
+
+/* Copié collé une classe et modifié le padding (je sais pas override)*/
+@media (min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+}
