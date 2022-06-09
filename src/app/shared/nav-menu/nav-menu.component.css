@@ -3,12 +3,17 @@
     letter-spacing: 6.33px;
 }
 
-.dark-blue .nav-link {
+.nav-link {
     color: #2B4D88!important;
 }
 
+.nav-link:hover{
+    filter: brightness(150%);
+}
+
 .nav-link.active {
-    border-bottom: 2px dashed;
+    border-bottom: 3px solid;
+    height: 2.5em;
 }
 
 /* Copié collé une classe et modifié le padding (je sais pas override)*/
