@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/*  */
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar .poppins {
+    font-weight: 500;
+}
+
+.poppins .h1 {
+    font-size: 2.5em;
+}
+
+.poppins .h2 {
+    font-size: 1.875em;
+}
+
+.poppins .p {
+    font-size: 0.875em;
+}
+
+/* Fond Bleu */
+.light-blue-bg {
+    background-color: #f1f6ff;
+}
