@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
   }
   .logo {          
     display: flex;
@@ -38,8 +38,18 @@
     align-items: right;
     justify-content: center;
   }
+  .contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 
   footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 3px;
     background-color: rgb(245, 249, 255);
     color: rgb(43, 77, 136);
@@ -52,12 +62,17 @@
   <div class="container">
 
   <div class="logo">
-    <img src="../../../../assets/logo_ice" alt="logo_ICE">
+    <img src="../../../../assets/logos.png" alt="logo_ICE">
   </div>
+  
 
   <div class="header-title">
     <h1 style="font-family:Poppins;" >ICE 2023</h1>
-    <p><h2 style="font-family:Poppins;">contact@tanahair.cd</h2>
+    <p>
+      <div class="contact">
+        <img src="../../../../assets/Icon_lettre.svg" alt="icon_lettre">
+        <h2 style="font-family:Poppins;">contact@tanahair.cd</h2>
+      </div>
     <p><h2 style="font-family:Poppins;">@2022 EPITA. All rights reserved.</h2>
   </div>
 
