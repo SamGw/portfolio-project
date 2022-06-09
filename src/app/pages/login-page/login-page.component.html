@@ -1,1 +1,24 @@
-<p>login-page works!</p>
+<br>
+<h1 class="poppins h1 centered dark-blue">I want to login !</h1>
+<h3 class="poppins h3 centered dark-blue">Reserved for Epita Students</h3>
+
+<!-- Bootstrap 5 Form https://getbootstrap.com/docs/5.0/forms/overview/-->
+<form #userlogin="ngForm" class="form poppins" (ngSubmit) = "onClickSubmit(userlogin.value)">
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="model.email">
+      <div id="emailHelp" class="form-text">Epita Email</div>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" name="password" id="exampleInputPassword1" [(ngModel)]="model.password">
+      <div id="passwordHelpBlock" class="form-text">Cri Password</div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>

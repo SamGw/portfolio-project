@@ -9,7 +9,8 @@
           <!-- TODO Correct the route-->
           <a *ngIf="isLogged" class="nav-link">MY PORTFOLIO</a> 
           <!--  -->
-          <a class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">LOGIN</a>
+          <a *ngIf="!isLogged" class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">LOGIN</a>
+          <a *ngIf="isLogged" class="nav-link" (click)="logOut()">LOGOUT</a>
         </div>
       </div>
     </div>
