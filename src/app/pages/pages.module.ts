@@ -4,12 +4,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     LoginPageComponent,
     PortfolioListComponent,
-    HomeComponent
+    HomeComponent,
+    PortfolioComponent
   ],
   imports: [
     CommonModule,

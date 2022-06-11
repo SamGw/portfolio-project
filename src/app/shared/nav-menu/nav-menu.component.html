@@ -7,7 +7,7 @@
           <a class="nav-link" routerLink= "/home" routerLinkActive="active">HOME</a>
           <a class="nav-link" routerLink="/portfolio-list" routerLinkActive="active" ariaCurrentWhenActive="page">PORTFOLIOS</a>
           <!-- TODO Correct the route-->
-          <a *ngIf="isLogged" class="nav-link">MY PORTFOLIO</a> 
+          <a *ngIf="isLogged" class="nav-link"  routerLink="/portfolio" routerLinkActive="active">MY PORTFOLIO</a> 
           <!--  -->
           <a *ngIf="!isLogged" class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">LOGIN</a>
           <a *ngIf="isLogged" class="nav-link" (click)="logOut()">LOGOUT</a>
