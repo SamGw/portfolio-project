@@ -5,7 +5,6 @@ import { PortfolioListComponent } from './portfolio-list/portfolio-list.componen
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonModule,
   ]
 })
 export class PagesModule { }
