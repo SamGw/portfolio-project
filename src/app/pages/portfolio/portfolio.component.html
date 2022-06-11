@@ -1,1 +1,13 @@
-<p>portfolio works!</p>
+<!-- Intro About Me -->
+<div class="intro">
+    <div class="poppins dark-blue intro-text">
+        <!-- Text -->
+        <h3 class="semi-bold">{{model.intro.jobTitle}}</h3>
+        <h1 class="semi-bold">{{model.intro.name}}</h1>
+        <p class="poppins body-color">{{model.intro.description}}
+        </p>
+        <button mat-raised-button color="primary" class="button">Download my CV</button>
+    </div>
+    <!-- TODO fix the size of the picture ? => Be careful about pictures sizes given by users -->
+    <img class="picture" src="../../../../assets/picture.png" alt="picture">
+</div>
