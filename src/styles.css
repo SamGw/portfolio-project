@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Poppins Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* Poppins related */
 .poppins {
@@ -24,7 +24,11 @@
 /* Couleurs */
 
 /* Fond Bleu */
-.light-blue-bg {
+.light-blue-bg-1 {
+    background-color: #F5F9FF;
+}
+
+.light-blue-bg-2 {
     background-color: #f1f6ff;
 }
 

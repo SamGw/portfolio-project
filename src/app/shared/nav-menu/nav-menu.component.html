@@ -1,15 +1,14 @@
 <!-- navbar de bootstrap 5 -->
-<nav class="navbar navbar-expand-lg navbar-light light-blue-bg">
+<nav class="navbar navbar-expand-lg navbar-light light-blue-bg-1">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <!-- ms-auto pour mettre les elements a droite -->
         <div class="navbar-nav ms-auto poppins dark-blue">
           <a class="nav-link" routerLink= "/home" routerLinkActive="active">HOME</a>
           <a class="nav-link" routerLink="/portfolio-list" routerLinkActive="active" ariaCurrentWhenActive="page">PORTFOLIOS</a>
-          <!-- TODO Correct the route-->
           <a *ngIf="isLogged" class="nav-link"  routerLink="/portfolio" routerLinkActive="active">MY PORTFOLIO</a> 
           <!--  -->
-          <a *ngIf="!isLogged" class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">LOGIN</a>
+          <a *ngIf="!isLogged" class="nav-link" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">LOG IN</a>
           <a *ngIf="isLogged" class="nav-link" (click)="logOut()">LOGOUT</a>
         </div>
       </div>

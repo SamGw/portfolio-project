@@ -1,0 +1,36 @@
+
+/*#region General*/
+
+.semi-bold {
+    font-weight:600!important;
+}
+
+.body-color {
+    color:#51618F;
+    letter-spacing: 0.5px;
+}
+
+/*#endregion*/
+
+/*#region Intro*/
+.intro {
+    background-color: #F1F6FF;
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5%;
+}
+
+.intro-text {
+    margin-left:10%;
+    padding-top:13%;
+    width:700px;
+}
+
+.picture {
+    padding-top:5%;
+    width: 25%;
+    height: 25%;
+    margin-left:15%;
+}
+/*#endregion*/
+
