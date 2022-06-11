@@ -2,13 +2,12 @@
 <div class="intro">
     <div class="poppins dark-blue intro-text">
         <!-- Text -->
-        <h3 class="semi-bold">Job Title</h3>
-        <h1 class="semi-bold">Hello, I am John Doe</h1>
-        <p class="poppins body-color">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar quam nisi nisl gravida leo nisi augue. 
-            Vivamus nunc interdum interdum pulvinar massa nullam odio at. Sem cursus tincidunt velit porttitor.
-            Nunc, elit duis eu nunc curabitur aenean volutpat.
+        <h3 class="semi-bold">{{model.intro.jobTitle}}</h3>
+        <h1 class="semi-bold">{{model.intro.name}}</h1>
+        <p class="poppins body-color">{{model.intro.description}}
         </p>
-        <button mat-raised-button color="primary">Download my CV</button>
+        <button mat-raised-button color="primary" class="button">Download my CV</button>
     </div>
+    <!-- TODO fix the size of the picture ? => Be careful about pictures sizes given by users -->
     <img class="picture" src="../../../../assets/picture.png" alt="picture">
 </div>
