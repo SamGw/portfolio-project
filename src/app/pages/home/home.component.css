@@ -1,0 +1,67 @@
+h1 {
+    font-size: 7.5em;
+    text-align: center;
+    color: rgb(43, 77, 136);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 7.5em;
+    text-align: center;
+    color: rgb(43, 77, 136);
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 3.5em;
+    text-align: left;
+    color: rgb(43, 77, 136);
+}
+
+h4 {
+    font-size: 2em;
+    text-align: left;
+    color: rgb(181, 190, 216);
+}
+
+.global {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.EPITA {
+    justify-content: flex-start;
+}
+
+.portfolios {
+    justify-content: flex-start;
+    background-color: rgb(184, 199, 240);
+    margin-left: 2rem;
+    padding: 2rem;
+}
+
+.contenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5rem;
+}
+
+.texte {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    margin: 5rem;
+}
