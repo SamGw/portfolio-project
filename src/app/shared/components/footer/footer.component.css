@@ -52,7 +52,6 @@ h3 {
 }
 
 footer {
-    position:fixed;
     width:100%;
     bottom:0px;
     display: flex;
@@ -62,4 +61,8 @@ footer {
     padding: 3px;
     background-color: rgb(245, 249, 255);
     color: rgb(43, 77, 136);
+}
+
+.fixed {
+    position:fixed;
 }

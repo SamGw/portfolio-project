@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { RouterModule } from '@angular/router';
+import { SkillComponent } from './skill/skill.component';
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    SkillComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     NavMenuComponent,
-    FooterComponent
+    FooterComponent,
+    SkillComponent,
   ]
 })
 export class SharedModule { }

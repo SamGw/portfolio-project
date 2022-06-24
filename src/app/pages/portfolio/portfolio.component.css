@@ -10,6 +10,10 @@
     letter-spacing: 0.5px;
 }
 
+.centered {
+    text-align: center;
+}
+
 /*#endregion*/
 
 /*#region Intro*/
@@ -22,14 +26,14 @@
 
 .intro-text {
     margin-left:10%;
-    padding-top:13%;
+    padding-top:14%;
     width:700px;
 }
 
 .picture {
     padding-top:5%;
-    width: 25%;
-    height: 25%;
+    width: 20%;
+    height: 20%;
     margin-left:15%;
 }
 
@@ -39,3 +43,8 @@
 }
 /*#endregion*/
 
+/*#region Skills*/
+.skills-div{
+    margin-top: 2rem;
+}
+/*#endregion*/
