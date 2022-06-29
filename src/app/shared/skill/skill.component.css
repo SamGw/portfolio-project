@@ -6,7 +6,8 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
 .skill-card {
     position: relative;
     width:25vw;
-    height:20vh;
+    max-width: 400px;
+    height:21vh;
     border:solid 1px lightgray;
     border-radius:30px;
 }
@@ -31,7 +32,7 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
 .edit-icon {
     position: absolute;
     left: 90%;
-    top:10%;
+    top:9%;
     cursor:pointer;
 
     font-size: 2em;
@@ -42,7 +43,7 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
 .editing-icon-zone{
     position: absolute;
     left: 83%;
-    top:10%;
+    top:9%;
     cursor:pointer;
     
     filter:brightness(110%);

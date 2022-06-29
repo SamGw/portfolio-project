@@ -46,5 +46,18 @@
 /*#region Skills*/
 .skills-div{
     margin-top: 2rem;
+    margin-bottom: 5vh;
+}
+
+.skills-flex{
+    margin-top:3vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill{
+    margin-right: 4vw;
 }
 /*#endregion*/
