@@ -19,7 +19,8 @@ export class SkillComponent implements OnInit {
 
   constructor() {
     const tags = [{ name: "Cloud"}, { name: "Javascript"}]
-    this.model = { id: 0, skillTitle: "Mobile and Web Design", skillDescription: "WOWOWWOOO", tags: tags}
+    this.model = { id: 0, skillTitle: "Mobile and Web Design", skillDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
+    "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: tags}
   }
 
   ngOnInit(): void {
@@ -33,12 +34,19 @@ export class SkillComponent implements OnInit {
   validate()
   {
     this.isEditing = false;
+
+    // TODO: if some fields are still inputs put notification
+    // Remet les elements en div et non en input
+    this.inputsToFalse()
   }
 
   // TODO
   close()
   {
     this.isEditing = false;
+
+     // Remet les elements en div et non en input
+    this.inputsToFalse()
   }
 
   addTag()
@@ -46,14 +54,34 @@ export class SkillComponent implements OnInit {
     this.model.tags.push({name:""})
   }
 
+  temporaryUpdateTitle(event: any)
+  {
+    this.model.skillTitle = event.target.value;
+    this.model.isTitleInput = false;
+  }
+
   temporaryUpdateTag(index: number, event: any)
   {
     this.model.tags[index].name = event.target.value;
     this.model.tags[index].isInput = false;
   }
+
+  temporaryUpdateDescription(event: any)
+  {
+    this.model.skillDescription = event.target.value;
+    this.model.isDescriptionInput = false;
+  }
+
   destroyTag(index: number)
   {
     this.model.tags.splice(index, 1)
+  }
+
+  inputsToFalse()
+  {
+    this.model.isTitleInput = false;
+    this.model.isDescriptionInput = false;
+    this.model.tags.forEach(tag => tag.isInput = false)
   }
 
 }

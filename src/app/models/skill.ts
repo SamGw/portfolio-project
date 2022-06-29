@@ -17,6 +17,9 @@ export class Skill implements ISkill{
     skillDescription: string;
     tags: Tag[];
 
+    isTitleInput?: boolean;
+    isDescriptionInput?: boolean;
+
     constructor(
         id:number,
         skillTitle: string,
