@@ -110,7 +110,7 @@ export class SkillComponent implements OnInit {
     //   horizontalPosition: 'center',
     //   verticalPosition: 'bottom',
     // });
-    this._snackBar.open('Some modifications may have not been saved, please press \'Enter\' when changing a field and you want it to be saved when validating the changes.', 'Got it!', {
+    this._snackBar.open('Some modifications may have not been saved, if you want a field to be saved when validating the changes, please press \'Enter\' when changing the field and your modifications are done.', 'Got it!', {
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
       panelClass: ['light-blue-bg-2', 'poppins', 'dark-blue', 'snackbar-bigger-font']
