@@ -1,20 +1,31 @@
 <!-- skill card -->
-<div class="skill-card light-blue-bg-1">
+<div class="skill-card light-blue-bg-1" [class.editing]="isEditing">
     <!-- margins -->
     <div class="inner">
-        <div class="flex-row">
-            <!-- skill title -->
-            <h4 class="semi-bold">{{model.skillTitle}}</h4>
-            <div>
-                <i class="material-icons edit">edit</i>
-            </div>
+        <!-- skill title -->
+        <h4 class="semi-bold">{{model.skillTitle}}</h4>
+        <!-- edit icons -->
+        <i *ngIf="isEditable && !isEditing" class="material-icons edit-icon" (click)="edit()">edit</i>
+        <div *ngIf="isEditable && isEditing" class="editing-icon-zone flex-row">
+            <i class="material-icons editing-icon green" (click)="validate()">check</i>
+            <i class="material-icons editing-icon red" (click)="close()">close</i>
         </div>
+
         <!-- tags -->
         <div class="tags-zone">
-            <div *ngFor="let tag of model.tags" class="tag centered">
-                {{tag.name}}
+            <div *ngFor="let tag of model.tags; let i = index" class="tag centered" (click)="isEditing ? tag.isInput = true : false">
+                <i *ngIf="isEditing" class="material-icons editing-icon red small-icon" (click)="destroyTag(i)">close</i>
+                <!-- tag value -->
+                <div *ngIf="!tag.isInput">
+                    {{tag.name}}
+                </div>
+                <!-- input -->
+                <input *ngIf="isEditing && tag.isInput" [value]="tag.name" class="tag-input" (keyup.enter)="temporaryUpdateTag(i, $event)">
             </div>
-            <i class="material-icons">add</i>
+            <!-- Plus -->
+            <i *ngIf="isEditing" class="material-icons" (click)="addTag()">add</i>
         </div>
+        <!-- skill description -->
+        <p>{{ model.skillDescription }}</p>
     </div>
 </div>

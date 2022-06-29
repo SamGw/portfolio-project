@@ -11,6 +11,10 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
     border-radius:30px;
 }
 
+.editing {
+    filter:brightness(95%)
+}
+
 .inner {
     margin-left:2vw;
     margin-right:2vw;
@@ -23,9 +27,55 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
     flex-direction: row;
 }
 
-.edit {
+/* Icons */
+.edit-icon {
     position: absolute;
-    left: 90%;;
+    left: 90%;
+    top:10%;
+    cursor:pointer;
+
+    font-size: 2em;
+    /* necessary because title is also margined idk why */
+    /* margin-top:0.1rem; */
+}
+
+.editing-icon-zone{
+    position: absolute;
+    left: 83%;
+    top:10%;
+    cursor:pointer;
+    
+    filter:brightness(110%);
+
+    /* necessary because title is also margined idk why */
+    margin-top:0.1rem;
+}
+
+.small-icon{
+    position:absolute;
+    font-size: 1.5em!important;
+    left:90%;
+    top:-10%;
+
+}
+.editing-icon{
+    font-size: 2em;
+}
+
+.red{
+    color:red;
+}
+
+.green{
+    color:green;
+}
+
+.editing-icon:hover{
+    filter:brightness(70%)
+}
+
+.edit:hover {
+    filter: brightness(150%);
 }
 
 .centered {
@@ -42,6 +92,7 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
 }
 
 .tag{
+    position:relative;
     width:5.5vw;
     height:3vh;
     border-radius:30px;
@@ -51,4 +102,9 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
 
     margin-right:0.8vw;
     background-color: #EDEDED;
+}
+
+.tag-input{
+    width:100%;
+    background:none;
 }
