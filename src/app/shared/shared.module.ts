@@ -4,6 +4,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { RouterModule } from '@angular/router';
 import { SkillComponent } from './skill/skill.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SkillComponent } from './skill/skill.component';
   imports: [
     CommonModule,
     RouterModule,
+    MatSnackBarModule,
   ],
   exports: [
     NavMenuComponent,

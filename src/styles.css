@@ -27,6 +27,21 @@
 
 /* Couleurs */
 
+.mat-simple-snackbar {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+.mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.mat-simple-snackbar-action {
+    color: #2B4D88;
+}
+
 /* Fond Bleu */
 .light-blue-bg-1 {
     background-color: #F5F9FF;

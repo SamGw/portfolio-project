@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Skill } from 'src/app/models/skill';
 import { ITag } from 'src/app/models/tag';
 
@@ -17,7 +18,7 @@ export class SkillComponent implements OnInit {
 
   model: Skill;
 
-  constructor() {
+  constructor(private _snackBar: MatSnackBar) {
     const tags = [{ name: "Cloud"}, { name: "Javascript"}]
     this.model = { id: 0, skillTitle: "Mobile and Web Design", skillDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
     "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", tags: tags}
@@ -35,6 +36,9 @@ export class SkillComponent implements OnInit {
   {
     this.isEditing = false;
 
+    if (this.isAnyFieldInput()) {
+      this.openSnackBar();
+    }
     // TODO: if some fields are still inputs put notification
     // Remet les elements en div et non en input
     this.inputsToFalse()
@@ -84,4 +88,32 @@ export class SkillComponent implements OnInit {
     this.model.tags.forEach(tag => tag.isInput = false)
   }
 
+  isAnyFieldInput()
+  {
+    // Title
+    if (this.model.isTitleInput)
+      return true;
+    
+    // Description
+    if (this.model.isDescriptionInput)
+      return true;
+    
+    // Tags
+    if (this.model.tags.some(tag => tag.isInput))
+      return true;
+    
+    return false;
+  }
+
+  openSnackBar() {
+    // this._snackBar.openFromComponent(MessageComponent, {
+    //   horizontalPosition: 'center',
+    //   verticalPosition: 'bottom',
+    // });
+    this._snackBar.open('Some modifications may have not been saved, please press \'Enter\' when changing a field and you want it to be saved when validating the changes.', 'Got it!', {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: ['light-blue-bg-2', 'poppins', 'dark-blue', 'snackbar-bigger-font']
+    });
+  }
 }
