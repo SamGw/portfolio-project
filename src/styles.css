@@ -21,6 +21,10 @@
     font-size: 0.875em;
 }
 
+.semi-bold {
+    font-weight:600!important;
+}
+
 /* Couleurs */
 
 /* Fond Bleu */

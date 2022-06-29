@@ -1,1 +1,20 @@
-<p>skill works!</p>
+<!-- skill card -->
+<div class="skill-card light-blue-bg-1">
+    <!-- margins -->
+    <div class="inner">
+        <div class="flex-row">
+            <!-- skill title -->
+            <h4 class="semi-bold">{{model.skillTitle}}</h4>
+            <div>
+                <i class="material-icons edit">edit</i>
+            </div>
+        </div>
+        <!-- tags -->
+        <div class="tags-zone">
+            <div *ngFor="let tag of model.tags" class="tag centered">
+                {{tag.name}}
+            </div>
+            <i class="material-icons">add</i>
+        </div>
+    </div>
+</div>

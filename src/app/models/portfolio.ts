@@ -1,3 +1,5 @@
+import { ISkill } from "./skill";
+
 export interface IPortfolio {
     // Portfolio id
     id: number;
@@ -9,6 +11,8 @@ export interface IPortfolio {
         name: string;
         description: string;
     }
+
+    skills?: ISkill[];
 }
 
 export class Portfolio implements IPortfolio

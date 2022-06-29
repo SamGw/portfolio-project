@@ -5,7 +5,6 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { RouterModule } from '@angular/router';
 import { SkillComponent } from './skill/skill.component';
 
-
 @NgModule({
   declarations: [
     FooterComponent,
@@ -14,7 +13,7 @@ import { SkillComponent } from './skill/skill.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
     NavMenuComponent,
