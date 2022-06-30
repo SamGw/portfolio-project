@@ -36,10 +36,11 @@ export class SkillComponent implements OnInit {
   {
     this.isEditing = false;
 
-    // Ff some fields are still inputs put notification
+    // If some fields are still inputs put notification
     if (this.isAnyFieldInput()) {
       this.openSnackBar();
     }
+
     // Remet les elements en div et non en input
     this.inputsToFalse()
   }
@@ -49,7 +50,7 @@ export class SkillComponent implements OnInit {
   {
     this.isEditing = false;
 
-     // Remet les elements en div et non en input
+    // Remet les elements en div et non en input
     this.inputsToFalse()
   }
 

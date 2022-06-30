@@ -57,6 +57,18 @@ export class PortfolioComponent implements OnInit {
     this.model.intro.isTitleInput = false;
   }
 
+  temporaryUpdateIntroName(event: any)
+  {
+    this.model.intro.name = event.target.value;
+    this.model.intro.isNameInput = false;
+  }
+
+  temporaryUpdateIntroDescription(event: any)
+  {
+    this.model.intro.description = event.target.value;
+    this.model.intro.isDescriptionInput = false;
+  }
+
   // who: 'intro' || ...
   inputsToFalse(who: string)
   {

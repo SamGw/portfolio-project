@@ -2,7 +2,9 @@
 <div class="intro">
     <!-- Text -->
     <div class="poppins dark-blue intro-text " [class.editing]="isIntroEditing">
+        <!-- Job Title and Edit Icons -->
         <div style="position: relative">
+            <!-- job title -->
             <h3 *ngIf="!model.intro.isTitleInput" class="semi-bold" (click)="isIntroEditing? model.intro.isTitleInput = true : false">{{model.intro.jobTitle}}</h3>
             <input *ngIf="isIntroEditing && model.intro.isTitleInput" [value]="model.intro.jobTitle" class="intro-title-input" (keyup.enter)="temporaryUpdateIntroTitle($event)">
             <!-- edit icons -->
@@ -12,9 +14,15 @@
                 <i class="material-icons editing-icon red" (click)="closeIntro()">close</i>
             </div>
         </div>
-            <h1 class="semi-bold">{{model.intro.name}}</h1>
-        <p class="poppins body-color">{{model.intro.description}}
-        </p>
+        <!-- Name -->
+        <h1 *ngIf="!model.intro.isNameInput" class="semi-bold" (click)="isIntroEditing? model.intro.isNameInput = true : false">{{model.intro.name}}</h1>
+        <input *ngIf="isIntroEditing && model.intro.isNameInput" [value]="model.intro.name" class="intro-name-input" (keyup.enter)="temporaryUpdateIntroName($event)">
+
+        <!-- Description / About me -->
+        <p *ngIf="!model.intro.isDescriptionInput" class="poppins body-color intro-description" (click)="isIntroEditing? model.intro.isDescriptionInput = true : false">{{model.intro.description}}</p>
+        <textarea *ngIf="isIntroEditing && model.intro.isDescriptionInput" [value]="model.intro.description" class="intro-description-input" (keyup.enter)="temporaryUpdateIntroDescription($event)"></textarea>
+
+        <!-- TODO: CV downloads -->
         <button mat-raised-button color="primary" class="button">Download my CV</button>
     </div>
     <!-- TODO fix the size of the picture ? => Be careful about pictures sizes given by users -->
