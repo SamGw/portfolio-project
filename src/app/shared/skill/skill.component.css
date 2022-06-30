@@ -23,9 +23,9 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
     margin-bottom:2vh;
 }
 
-.flex-row{
+.flex-column{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: column; */
 }
 
 /* Icons */
@@ -36,20 +36,15 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
     cursor:pointer;
 
     font-size: 2em;
-    /* necessary because title is also margined idk why */
-    /* margin-top:0.1rem; */
 }
 
 .editing-icon-zone{
     position: absolute;
-    left: 83%;
-    top:9%;
+    left: 90%;
+    top:6%;
     cursor:pointer;
     
     filter:brightness(110%);
-
-    /* necessary because title is also margined idk why */
-    margin-top:0.1rem;
 }
 
 .small-icon{

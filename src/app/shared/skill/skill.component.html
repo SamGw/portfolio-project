@@ -7,7 +7,7 @@
         <input *ngIf="isEditing && model.isTitleInput" [value]="model.skillTitle" class="title-input" (keyup.enter)="temporaryUpdateTitle($event)">
         <!-- edit icons -->
         <i *ngIf="isEditable && !isEditing" class="material-icons edit-icon" (click)="edit()">edit</i>
-        <div *ngIf="isEditable && isEditing" class="editing-icon-zone flex-row">
+        <div *ngIf="isEditable && isEditing" class="editing-icon-zone flex-column">
             <i class="material-icons editing-icon green" (click)="validate()">check</i>
             <i class="material-icons editing-icon red" (click)="close()">close</i>
         </div>

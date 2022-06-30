@@ -14,6 +14,11 @@
     text-align: center;
 }
 
+.editing {
+    filter:brightness(95%);
+    background-color: #F1F6FF;
+}
+
 /*#endregion*/
 
 /*#region Intro*/
@@ -21,12 +26,17 @@
     background-color: #F1F6FF;
     display: flex;
     flex-direction: row;
-    padding-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 .intro-text {
     margin-left:10%;
-    padding-top:14%;
+    margin-top:14%;
+    margin-bottom:5%;
+
+    padding: 1%;
+
+    border-radius: 30px;
     width:700px;
 }
 
@@ -61,3 +71,43 @@
     margin-right: 4vw;
 }
 /*#endregion*/
+
+/* Icons */
+.edit-icon {
+    position: absolute;
+    left: 102%;
+    top:9%;
+    cursor:pointer;
+
+    font-size: 2em;
+}
+.editing-icon-zone{
+    position: absolute;
+    left: 102%;
+    top: 0;
+    cursor:pointer;
+    
+    filter:brightness(110%);
+}
+
+.editing-icon{
+    font-size: 2em;
+}
+
+.red{
+    color:red;
+}
+
+.green{
+    color:green;
+}
+
+.editing-icon:hover{
+    filter:brightness(70%)
+}
+
+/* Inputs */
+.intro-title-input{
+    width:80%;
+    background:none;
+}

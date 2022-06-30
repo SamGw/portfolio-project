@@ -1,9 +1,18 @@
 <!-- Intro About Me -->
 <div class="intro">
-    <div class="poppins dark-blue intro-text">
-        <!-- Text -->
-        <h3 class="semi-bold">{{model.intro.jobTitle}}</h3>
-        <h1 class="semi-bold">{{model.intro.name}}</h1>
+    <!-- Text -->
+    <div class="poppins dark-blue intro-text " [class.editing]="isIntroEditing">
+        <div style="position: relative">
+            <h3 *ngIf="!model.intro.isTitleInput" class="semi-bold" (click)="isIntroEditing? model.intro.isTitleInput = true : false">{{model.intro.jobTitle}}</h3>
+            <input *ngIf="isIntroEditing && model.intro.isTitleInput" [value]="model.intro.jobTitle" class="intro-title-input" (keyup.enter)="temporaryUpdateIntroTitle($event)">
+            <!-- edit icons -->
+            <i *ngIf="isEditable && !isIntroEditing" class="material-icons edit-icon" (click)="isIntroEditing=true">edit</i>
+            <div *ngIf="isEditable && isIntroEditing" class="editing-icon-zone flex-row">
+                <i class="material-icons editing-icon green" (click)="validateIntro()">check</i>
+                <i class="material-icons editing-icon red" (click)="closeIntro()">close</i>
+            </div>
+        </div>
+            <h1 class="semi-bold">{{model.intro.name}}</h1>
         <p class="poppins body-color">{{model.intro.description}}
         </p>
         <button mat-raised-button color="primary" class="button">Download my CV</button>
@@ -17,8 +26,8 @@
     <h1 class="centered semi-bold">My set of skills</h1>
     <div class="skills-flex">
         <!-- todo create a for loop in html and a model in ts-->
-        <app-skill class="skill"></app-skill>
-        <app-skill class="skill"></app-skill>
-        <app-skill class="skill"></app-skill>
+        <app-skill class="skill" [isEditable]="true"></app-skill>
+        <app-skill class="skill" [isEditable]="true"></app-skill>
+        <app-skill class="skill" [isEditable]="true"></app-skill>
     </div>
 </div>

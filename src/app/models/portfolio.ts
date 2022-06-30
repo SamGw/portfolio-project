@@ -23,6 +23,10 @@ export class Portfolio implements IPortfolio
         jobTitle: string;
         name: string;
         description: string;
+        
+        isTitleInput?: boolean;
+        isNameInput?: boolean;
+        isDescriptionInput?: boolean;
     }
 
     constructor(

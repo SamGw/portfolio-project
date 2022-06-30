@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Skill } from 'src/app/models/skill';
 import { ITag } from 'src/app/models/tag';
@@ -10,11 +10,11 @@ import { ITag } from 'src/app/models/tag';
 })
 export class SkillComponent implements OnInit {
 
-  // Sommes-nous dans notre portfolio ? Par défaut: non
-  isEditable: boolean = true;
-  isEditing: boolean = false;
+  // TODO: make the tags length depend on its content length
 
-  nbOfTags: number = 2;
+  // Sommes-nous dans notre portfolio ? Par défaut: non
+  @Input("isEditable") isEditable: boolean = false;
+  isEditing: boolean = false;
 
   model: Skill;
 
@@ -31,20 +31,20 @@ export class SkillComponent implements OnInit {
     this.isEditing = true;
   }
 
-  // TODO
+  // TODO with backend
   validate()
   {
     this.isEditing = false;
 
+    // Ff some fields are still inputs put notification
     if (this.isAnyFieldInput()) {
       this.openSnackBar();
     }
-    // TODO: if some fields are still inputs put notification
     // Remet les elements en div et non en input
     this.inputsToFalse()
   }
 
-  // TODO
+  // TODO with backend
   close()
   {
     this.isEditing = false;
