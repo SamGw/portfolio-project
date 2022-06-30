@@ -39,8 +39,8 @@
 /*#region Icons */
 .edit-icon {
     position: absolute;
-    left: 90%;
-    top:9%;
+    left: 93%;
+    top:1rem;
     cursor:pointer;
 
     font-size: 2em;
@@ -48,8 +48,8 @@
 
 .editing-icon-zone{
     position: absolute;
-    left: 90%;
-    top:6%;
+    left: 93%;
+    top:1rem;
     cursor:pointer;
     
     filter:brightness(110%);
