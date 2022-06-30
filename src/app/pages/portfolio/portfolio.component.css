@@ -59,11 +59,11 @@
 /*#region Skills*/
 .skills-div{
     margin-top: 2rem;
-    margin-bottom: 5vh;
+    margin-bottom: 5rem;
 }
 
 .skills-flex{
-    margin-top:3vh;
+    margin-top:3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,9 +73,20 @@
 .skill{
     margin-right: 4vw;
 }
+
+.skill:last-child{
+    margin-right: 0;
+}
 /*#endregion*/
 
-/* Icons */
+/*#region Projects */
+.projects-div{
+    margin-top: 8vh;
+    margin-bottom: 5vh;
+}
+/*#endregion*/
+
+/*#region Icons */
 .edit-icon {
     position: absolute;
     left: 102%;
@@ -108,8 +119,12 @@
 .editing-icon:hover{
     filter:brightness(70%)
 }
+.edit-icon:hover {
+    filter: brightness(150%);
+}
+/*#endregion*/
 
-/* Inputs */
+/*#region Inputs */
 .intro-title-input{
     width:80%;
     height: 2.6em;
@@ -127,3 +142,4 @@
     height: 10em;
     background:none;
 }
+/*#endregion*/

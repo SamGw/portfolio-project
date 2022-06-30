@@ -5,12 +5,14 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { RouterModule } from '@angular/router';
 import { SkillComponent } from './skill/skill.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
     FooterComponent,
     NavMenuComponent,
-    SkillComponent
+    SkillComponent,
+    ProjectComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NavMenuComponent,
     FooterComponent,
     SkillComponent,
+    ProjectComponent,
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,19 @@
+.project-card {
+    position: relative;
+    width:40vw;
+    max-width: 800px;
+    height:20rem;
+    border:solid 1px lightgray;
+    /* border-radius:30px; */
+}
+
+.editing {
+    filter:brightness(95%)
+}
+
+.inner {
+    margin-left:2vw;
+    margin-right:2vw;
+    margin-top:2vh;
+    margin-bottom:2vh;
+}
