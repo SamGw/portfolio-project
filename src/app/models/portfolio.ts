@@ -1,4 +1,5 @@
-import { ISkill } from "./skill";
+import { IProject, Project } from "./project";
+import { ISkill, Skill } from "./skill";
 
 export interface IPortfolio {
     // Portfolio id
@@ -13,6 +14,7 @@ export interface IPortfolio {
     }
 
     skills?: ISkill[];
+    projects?: IProject[];
 }
 
 export class Portfolio implements IPortfolio
@@ -29,6 +31,9 @@ export class Portfolio implements IPortfolio
         isDescriptionInput?: boolean;
     }
 
+    skills?: Skill[];
+    projects?: Project[];
+
     constructor(
         id: number,
         jobTitle: string,
@@ -40,5 +45,7 @@ export class Portfolio implements IPortfolio
             name,
             description
         }
+        this.skills = [];
+        this.projects = [];
     }
 }

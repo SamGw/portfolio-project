@@ -1,6 +1,29 @@
-<div class="project-card light-blue-bg-1" [class.editing]="isEditing">
+<div class="project-card light-blue-bg-1" [class.editing]="isEditing" [style.height.rem]="seeMore ? averageNbOfLinesInProjectDescription() * 2.5 : 20">
     <!-- margins -->
     <div class="inner">
+        <!-- edit icons -->
+        <i *ngIf="isEditable && !isEditing" class="material-icons edit-icon" (click)="isEditing = true; seeMore=true">edit</i>
+        <div *ngIf="isEditable && isEditing" class="editing-icon-zone flex-column">
+            <i class="material-icons editing-icon green" (click)="validate()">check</i>
+            <i class="material-icons editing-icon red" (click)="close()">close</i>
+        </div>
 
+        <!-- project domain -->
+        <h5 *ngIf="!model.isDomainInput" class="semi-bold" (click)="isEditing ? model.isDomainInput = true : false">{{model.projectDomain}}</h5>
+        <input *ngIf="isEditing && model.isDomainInput" [value]="model.projectDomain" class="title-input" (keyup.enter)="temporaryUpdateDomain($event)">
+
+        <!-- project title -->
+        <h4 *ngIf="!model.isTitleInput" class="semi-bold" (click)="isEditing ? model.isTitleInput = true : false">{{model.projectTitle}}</h4>
+        <input *ngIf="isEditing && model.isTitleInput" [value]="model.projectTitle" class="title-input" (keyup.enter)="temporaryUpdateTitle($event)">
+
+        <!-- project description -->
+        <!-- TODO: make see more button for description -->
+        <div class="see-more" (click)="seeMore = !seeMore">
+            <p class="remove-margin-top">See more</p>
+            <i class="material-icons icon-see-more" [class.rotate]="seeMore">arrow_back_ios</i>
+        </div>
+        <p *ngIf="!model.isDescriptionInput && seeMore" class="description" (click)="isEditing ? model.isDescriptionInput = true : false">{{ model.projectDescription }}</p>
+        <textarea *ngIf="isEditing && model.isDescriptionInput" [value]="model.projectDescription" class="description-input"
+        [style.height.rem]="seeMore ? averageNbOfLinesInProjectDescription() * 1.5 : 10" (keyup.enter)="temporaryUpdateDescription($event)"></textarea>
     </div>
 </div>

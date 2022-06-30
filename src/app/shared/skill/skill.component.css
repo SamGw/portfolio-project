@@ -100,10 +100,6 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
     background-color: #EDEDED;
 }
 
-.tag:last-child{
-    margin-right:0;
-}
-
 /* Inputs */
 .title-input{
     width:80%;

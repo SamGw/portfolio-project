@@ -27,7 +27,7 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  //#region Intro
 
   validateIntro()
   {
@@ -68,6 +68,12 @@ export class PortfolioComponent implements OnInit {
     this.model.intro.description = event.target.value;
     this.model.intro.isDescriptionInput = false;
   }
+
+  //#endregion
+
+  //#region 
+
+  //#region Inputs checking
 
   // who: 'intro' || ...
   inputsToFalse(who: string)
@@ -112,4 +118,8 @@ export class PortfolioComponent implements OnInit {
       panelClass: ['light-blue-bg-2', 'poppins', 'dark-blue', 'snackbar-bigger-font']
     });
   }
+
+  //#endregion
+
+
 }
