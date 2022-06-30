@@ -13,6 +13,7 @@ export class ProjectComponent implements OnInit {
 
   isEditing: boolean = false;
   
+  initHeight: number = 15;
   seeMore:boolean = false;
 
   model: Project;
