@@ -102,6 +102,24 @@ export class PortfolioComponent implements OnInit {
     this.model.contact.description = event.target.value;
     this.model.contact.isDescriptionInput = false;
   }
+
+  temporaryUpdateContactAdress(event: any)
+  {
+    this.model.contact.adress = event.target.value;
+    this.model.contact.isAdressInput = false;
+  }
+
+  temporaryUpdateContactPhone(event: any)
+  {
+    this.model.contact.phone = event.target.value;
+    this.model.contact.isPhoneInput = false;
+  }
+
+  temporaryUpdateContactMail(event: any)
+  {
+    this.model.contact.mail = event.target.value;
+    this.model.contact.isMailInput = false;
+  }
   //#endregion
 
   //#region Inputs checking

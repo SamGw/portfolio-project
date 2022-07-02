@@ -72,17 +72,20 @@
         <div class="contact-detail">
             <i class="material-icons contact-icon">location_on</i>
             <p *ngIf="!model.contact.isAdressInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isAdressInput = true : false">{{model.contact.adress}}</p>
+            <input *ngIf="isContactEditing && model.contact.isAdressInput" [value]="model.contact.adress" class="intro-name-input" (keyup.enter)="temporaryUpdateContactAdress($event)">
         </div>
         <!-- Phone -->
         <div class="contact-detail">
             <i class="material-icons contact-icon">local_phone</i>
             <p *ngIf="!model.contact.isPhoneInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isPhoneInput = true : false">{{model.contact.phone}}</p>
+            <input *ngIf="isContactEditing && model.contact.isPhoneInput" [value]="model.contact.phone" class="intro-name-input" (keyup.enter)="temporaryUpdateContactPhone($event)">
         </div>
         <!-- Mail -->
-        <!-- Phone -->
         <div class="contact-detail">
             <i class="material-icons contact-icon">mail</i>
             <p *ngIf="!model.contact.isMailInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isMailInput = true : false">{{model.contact.mail}}</p>
+            <input *ngIf="isContactEditing && model.contact.isMailInput" [value]="model.contact.mail" class="intro-name-input" (keyup.enter)="temporaryUpdateContactMail($event)">
         </div>
     </div>
 </div>
+        
