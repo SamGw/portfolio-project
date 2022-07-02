@@ -14,6 +14,7 @@ export class PortfolioComponent implements OnInit {
 
   // L'intro est-elle en train d'etre modifiee ?
   isIntroEditing: boolean = false;
+  isContactEditing: boolean = false;
 
   model: Portfolio;
 
@@ -21,7 +22,11 @@ export class PortfolioComponent implements OnInit {
   constructor(private _snackBar: MatSnackBar) {
     // TODO call to backend to get data
     this.model = new Portfolio(0, "Software Engineer", "Hello I am John Doe",
-    "I am specialized in consulting and problem solving, I am ambitious and want to work my way up in the company");
+    "I am specialized in consulting and problem solving, I am ambitious and want to work my way up in the company", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
+    "Ipsum eget libero elementum amet ultricies ut hac ultrices ullamcorper. " +
+    "Enim nullam eu libero accumsan, nisl amet. Diam tristique nulla libero, " +
+    "massa malesuada neque. Urna, cras fringilla placerat vulputate et.", "28 rue Evergreen terrasse, Springfield",
+    "+33 6 50 50 50 50", "john.doe@epita.fr");
   }
   
   ngOnInit(): void {
@@ -40,7 +45,6 @@ export class PortfolioComponent implements OnInit {
     
     // Remet les elements en div et non en input
     this.inputsToFalse('intro')
-
   }
 
   closeIntro()
@@ -71,7 +75,34 @@ export class PortfolioComponent implements OnInit {
 
   //#endregion
 
-  //#region 
+  //#region Contact
+  validateContact()
+  {
+    this.isContactEditing = false;
+
+    // If some fields are still inputs put notification
+    if (this.isAnyFieldInput('contact')) {
+      this.openSnackBar();
+    }
+    
+    // Remet les elements en div et non en input
+    this.inputsToFalse('contact')
+  }
+
+  closeContact()
+  {
+    this.isContactEditing = false;
+
+    // Remet les elements en div et non en input
+    this.inputsToFalse('contact')
+  }
+
+  temporaryUpdateContactDescription(event: any)
+  {
+    this.model.contact.description = event.target.value;
+    this.model.contact.isDescriptionInput = false;
+  }
+  //#endregion
 
   //#region Inputs checking
 
@@ -83,6 +114,13 @@ export class PortfolioComponent implements OnInit {
       this.model.intro.isTitleInput = false;
       this.model.intro.isNameInput = false
       this.model.intro.isDescriptionInput = false;
+    }
+    else if (who == 'contact')
+    {
+      this.model.contact.isDescriptionInput = false;
+      this.model.contact.isAdressInput = false;
+      this.model.contact.isPhoneInput = false;
+      this.model.contact.isMailInput = false;
     }
   }
 
@@ -101,9 +139,15 @@ export class PortfolioComponent implements OnInit {
 
       // jobDescription
       if (this.model.intro.isDescriptionInput)
-      return true;
+        return true;
     }
-    
+
+    if (who == 'contact')
+    {
+      const contact = this.model.contact;
+      // Contact Description, Adress, Phone, Mail
+      return contact.isDescriptionInput || contact.isAdressInput || contact.isPhoneInput || contact.isMailInput;
+    }
     return false;
   }
 

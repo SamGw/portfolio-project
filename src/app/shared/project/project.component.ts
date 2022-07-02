@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Project } from 'src/app/models/project';
 
@@ -10,6 +10,8 @@ import { Project } from 'src/app/models/project';
 export class ProjectComponent implements OnInit {
 
   @Input("isEditable") isEditable: boolean = false;
+
+  @ViewChild("descr") descrElement!: ElementRef;
 
   isEditing: boolean = false;
   
@@ -34,17 +36,19 @@ export class ProjectComponent implements OnInit {
   }
 
    // TODO with backend
-   validate()
-   {
-     this.isEditing = false;
+  validate()
+  {
+    console.log("aazeazef");
+    console.log(!this.model.isDescriptionInput && this.seeMore);
+    this.isEditing = false;
  
-     // If some fields are still inputs put notification
-     if (this.isAnyFieldInput()) {
-       this.openSnackBar();
-     }
+    // If some fields are still inputs put notification
+    if (this.isAnyFieldInput()) {
+      this.openSnackBar();
+    }
  
-     // Remet les elements en div et non en input
-     this.inputsToFalse()
+    // Remet les elements en div et non en input
+    this.inputsToFalse()
    }
 
   // TODO with backend
@@ -100,7 +104,27 @@ export class ProjectComponent implements OnInit {
 
   averageNbOfLinesInProjectDescription()
   {
-    return this.model.projectDescription.length / 70
+
+    // A window with window.innerWidth == around 1400
+    // has on average 60 characters per lines
+    // We need to adapt this to other resolutions
+    const workingWidth = 14;
+    const width = window.innerWidth / 100;
+    const ratio = (width - 5)/ workingWidth;
+    console.log(ratio)
+    console.log(this.descrElement)
+    if (this.descrElement)
+    {
+      console.log(this.descrElement.nativeElement.offsetHeight)
+      console.log(this.descrElement.nativeElement.style.opacity)
+      const emToPxRatio = 16;  
+      const descrHeight = this.descrElement.nativeElement.offsetHeight;
+      const addedHeight = descrHeight / emToPxRatio;
+      console.log("Added height: " + addedHeight);
+      return descrHeight / emToPxRatio;
+    }
+    // return (this.model.projectDescription.length / 60) / ratio;
+    return 0;
   }
 
 

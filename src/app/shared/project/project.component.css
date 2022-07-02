@@ -17,6 +17,9 @@
 }
 
 .inner {
+    display: flex;
+    flex-direction: column;
+
     margin-left:2vw;
     margin-right:2vw;
     margin-top:2rem;
@@ -107,13 +110,20 @@
     height: 9vh;
 }
 
-.description {
+.visible{
+    position:inherit!important;
+    visibility: visible;
     animation-name:descriptionAppear;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
 }
+.hidden{
+    position:absolute;
+    visibility: hidden;
+}
+
 
 @keyframes descriptionAppear {
     0% {

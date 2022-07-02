@@ -1,3 +1,4 @@
+<!-- TODO Fix bug when text box disappear when the text is empty -->
 <!-- Intro About Me -->
 <div class="intro">
     <!-- Text -->
@@ -5,7 +6,7 @@
         <!-- Job Title and Edit Icons -->
         <div style="position: relative">
             <!-- job title -->
-            <h3 *ngIf="!model.intro.isTitleInput" class="semi-bold" (click)="isIntroEditing? model.intro.isTitleInput = true : false">{{model.intro.jobTitle}}</h3>
+            <h3 *ngIf="!model.intro.isTitleInput" class="semi-bold editable" (click)="isIntroEditing? model.intro.isTitleInput = true : false">{{model.intro.jobTitle}}</h3>
             <input *ngIf="isIntroEditing && model.intro.isTitleInput" [value]="model.intro.jobTitle" class="intro-title-input" (keyup.enter)="temporaryUpdateIntroTitle($event)">
             <!-- edit icons -->
             <i *ngIf="isEditable && !isIntroEditing" class="material-icons edit-icon" (click)="isIntroEditing=true">edit</i>
@@ -15,11 +16,11 @@
             </div>
         </div>
         <!-- Name -->
-        <h1 *ngIf="!model.intro.isNameInput" class="semi-bold" (click)="isIntroEditing? model.intro.isNameInput = true : false">{{model.intro.name}}</h1>
+        <h1 *ngIf="!model.intro.isNameInput" class="semi-bold editable" (click)="isIntroEditing? model.intro.isNameInput = true : false">{{model.intro.name}}</h1>
         <input *ngIf="isIntroEditing && model.intro.isNameInput" [value]="model.intro.name" class="intro-name-input" (keyup.enter)="temporaryUpdateIntroName($event)">
 
         <!-- Description / About me -->
-        <p *ngIf="!model.intro.isDescriptionInput" class="poppins body-color intro-description" (click)="isIntroEditing? model.intro.isDescriptionInput = true : false">{{model.intro.description}}</p>
+        <p *ngIf="!model.intro.isDescriptionInput" class="poppins body-color intro-description editable" (click)="isIntroEditing? model.intro.isDescriptionInput = true : false">{{model.intro.description}}</p>
         <textarea *ngIf="isIntroEditing && model.intro.isDescriptionInput" [value]="model.intro.description" class="intro-description-input" (keyup.enter)="temporaryUpdateIntroDescription($event)"></textarea>
 
         <!-- TODO: CV downloads -->
@@ -47,5 +48,41 @@
         <!-- Todo create a for loop in html and a model in ts (necessary for backend - data collecting)-->
         <app-project class="skill" [isEditable]="true"></app-project>
         <app-project class="skill" [isEditable]="true"></app-project>
+    </div>
+</div>
+
+<!-- Contact Me -->
+<div class="contact-me poppins dark-blue" [class.editing]="isContactEditing">
+    <!-- edit icons -->
+    <i *ngIf="isEditable && !isContactEditing" class="material-icons edit-icon-contact" (click)="isContactEditing=true">edit</i>
+    <div *ngIf="isEditable && isContactEditing" class="editing-icon-zone-contact flex-column">
+        <i class="material-icons editing-icon green" (click)="validateContact()">check</i>
+        <i class="material-icons editing-icon red" (click)="closeContact()">close</i>
+    </div>
+    <!-- Contact Me Text -->
+    <div class="contact-text">
+        <h1 class="semi-bold">Contact me!</h1>
+        <p *ngIf="!model.contact.isDescriptionInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isDescriptionInput = true : false">{{model.contact.description}}</p>
+        <textarea *ngIf="isContactEditing && model.contact.isDescriptionInput" [value]="model.contact.description" class="contact-description-input" (keyup.enter)="temporaryUpdateContactDescription($event)"></textarea>
+    </div>
+    <!-- Contact Me Details -->
+    <div class="contact-details light-blue-bg-1">
+        <h3 class="semi-bold contact-details-title">My contact details</h3>
+        <!-- Adress -->
+        <div class="contact-detail">
+            <i class="material-icons contact-icon">location_on</i>
+            <p *ngIf="!model.contact.isAdressInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isAdressInput = true : false">{{model.contact.adress}}</p>
+        </div>
+        <!-- Phone -->
+        <div class="contact-detail">
+            <i class="material-icons contact-icon">local_phone</i>
+            <p *ngIf="!model.contact.isPhoneInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isPhoneInput = true : false">{{model.contact.phone}}</p>
+        </div>
+        <!-- Mail -->
+        <!-- Phone -->
+        <div class="contact-detail">
+            <i class="material-icons contact-icon">mail</i>
+            <p *ngIf="!model.contact.isMailInput" class="poppins body-color contact-description editable" (click)="isContactEditing? model.contact.isMailInput = true : false">{{model.contact.mail}}</p>
+        </div>
     </div>
 </div>

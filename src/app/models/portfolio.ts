@@ -15,6 +15,13 @@ export interface IPortfolio {
 
     skills?: ISkill[];
     projects?: IProject[];
+
+    contact: {
+        description: string;
+        adress: string;
+        phone: string;
+        mail: string;
+    }
 }
 
 export class Portfolio implements IPortfolio
@@ -34,18 +41,42 @@ export class Portfolio implements IPortfolio
     skills?: Skill[];
     projects?: Project[];
 
+    contact: {
+        description: string;
+        adress: string;
+        phone: string;
+        mail: string;
+
+        isDescriptionInput?: boolean;
+        isAdressInput?: boolean;
+        isPhoneInput?: boolean;
+        isMailInput?: boolean;
+    }
+
     constructor(
         id: number,
         jobTitle: string,
-        name: string,
-        description: string) {
+        jobName: string,
+        jobDescription: string,
+        contactDescription: string,
+        contactAdress: string,
+        contactPhone: string,
+        contactMail: string) {
         this.id = id;
         this.intro = {
             jobTitle,
-            name,
-            description
+            name: jobName,
+            description: jobDescription
         }
+
         this.skills = [];
         this.projects = [];
+
+        this.contact = {
+            description: contactDescription,
+            adress: contactAdress,
+            phone: contactPhone,
+            mail: contactMail
+        }
     }
 }

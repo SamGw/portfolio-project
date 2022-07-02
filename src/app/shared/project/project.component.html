@@ -1,3 +1,5 @@
+<!-- TODO REMOVE EMPTY SPACE IN PROJECT CART ==> MAKE IT PRETTIER -->
+
 <div class="project-card light-blue-bg-1" [class.editing]="isEditing" [style.height.rem]="seeMore ? initHeight + averageNbOfLinesInProjectDescription() : initHeight">
     <!-- margins -->
     <div class="inner">
@@ -17,13 +19,12 @@
         <input *ngIf="isEditing && model.isTitleInput" [value]="model.projectTitle" class="title-input" (keyup.enter)="temporaryUpdateTitle($event)">
 
         <!-- project description -->
-        <!-- TODO: make see more button for description -->
         <div class="see-more" (click)="seeMore = !seeMore">
             <p class="remove-margin-top">See more</p>
             <i class="material-icons icon-see-more" [class.rotate]="seeMore">arrow_back_ios</i>
         </div>
-        <p *ngIf="!model.isDescriptionInput && seeMore" class="description" (click)="isEditing ? model.isDescriptionInput = true : false">{{ model.projectDescription }}</p>
+        <p #descr [class.visible]="!this.model.isDescriptionInput && this.seeMore ? true : false" class="hidden" (click)="isEditing ? model.isDescriptionInput = true : false">{{ model.projectDescription }}</p>
         <textarea *ngIf="isEditing && model.isDescriptionInput" [value]="model.projectDescription" class="description-input"
-        [style.height.rem]="seeMore ? 2 + averageNbOfLinesInProjectDescription() * 1.2 : 10" (keyup.enter)="temporaryUpdateDescription($event)"></textarea>
+        [style.height.rem]="seeMore ? averageNbOfLinesInProjectDescription() : 10" (keyup.enter)="temporaryUpdateDescription($event)"></textarea>
     </div>
 </div>

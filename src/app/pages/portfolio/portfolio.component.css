@@ -19,6 +19,10 @@
     background-color: #F1F6FF;
 }
 
+.editable {
+    cursor: pointer;
+}
+
 /*#endregion*/
 
 /*#region Intro*/
@@ -80,8 +84,7 @@
 
 /*#region Projects */
 .projects-div{
-    margin-top: 8vh;
-    margin-bottom: 5vh;
+    margin-top: 5rem;
 }
 /*#endregion*/
 
@@ -94,9 +97,27 @@
 
     font-size: 2em;
 }
+.edit-icon-contact {
+    position: absolute;
+    left: 90%;
+    top:5%;
+    cursor:pointer;
+
+    font-size: 2em;
+}
+
 .editing-icon-zone{
     position: absolute;
     left: 102%;
+    top: 0;
+    cursor:pointer;
+    
+    filter:brightness(110%);
+}
+
+.editing-icon-zone-contact{
+    position: absolute;
+    left: 90%;
     top: 0;
     cursor:pointer;
     
@@ -121,6 +142,17 @@
 .edit-icon:hover {
     filter: brightness(150%);
 }
+
+.flex-column{
+    display:flex;
+}
+
+.contact-icon{
+    font-size:1.8rem;
+    margin-bottom:1rem;
+    margin-right:0.6rem;
+    filter:brightness(150%);
+}
 /*#endregion*/
 
 /*#region Inputs */
@@ -141,4 +173,58 @@
     height: 10em;
     background:none;
 }
+
+.contact-description-input{
+    width:80%;
+    height: 10em;
+    background:none;
+}
+/*#endregion*/
+
+/*#region Contact Me*/
+.contact-me{
+    position:relative;
+
+    margin-top:4rem;
+    margin-bottom:4rem;
+    margin-left:1rem;
+    margin-right:1rem;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+}
+
+.contact-text{
+    width:40%;
+    margin-right:2vw;
+}
+
+.contact-description{
+    width:80%;
+    white-space:pre-wrap;
+}
+
+.contact-details-title{
+    margin-bottom:1rem;
+}
+
+.contact-details{
+    width:30vw;
+    max-width: 800px;
+    min-width:200px;
+    height:15rem;
+    padding: 2rem 3rem;
+}
+
+.contact-detail{
+    /* margin-top:1rem; */
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 /*#endregion*/
