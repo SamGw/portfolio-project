@@ -1,1 +1,35 @@
-<p>skill works!</p>
+<!-- skill card -->
+<div class="skill-card light-blue-bg-1" [class.editing]="isEditing">
+    <!-- margins -->
+    <div class="inner">
+        <!-- skill title -->
+        <h4 *ngIf="!model.isTitleInput" class="semi-bold editable" (click)="isEditing ? model.isTitleInput = true : false">{{model.skillTitle}}</h4>
+        <input *ngIf="isEditing && model.isTitleInput" [value]="model.skillTitle" class="title-input" (keyup.enter)="temporaryUpdateTitle($event)">
+        <!-- edit icons -->
+        <i *ngIf="isEditable && !isEditing" class="material-icons edit-icon" (click)="edit()">edit</i>
+        <div *ngIf="isEditable && isEditing" class="editing-icon-zone flex-column">
+            <i class="material-icons editing-icon green" (click)="validate()">check</i>
+            <i class="material-icons editing-icon red" (click)="close()">close</i>
+        </div>
+
+        <!-- tags -->
+        <div class="tags-zone">
+            <div *ngFor="let tag of model.tags; let i = index" class="tag centered editable" (click)="isEditing ? tag.isInput = true : false">
+                <i *ngIf="isEditing" class="material-icons editing-icon red small-icon" (click)="destroyTag(i)">close</i>
+                <!-- tag value -->
+                <div *ngIf="!tag.isInput">
+                    {{tag.name}}
+                </div>
+                <!-- input -->
+                <input *ngIf="isEditing && tag.isInput" [value]="tag.name" class="tag-input" (keyup.enter)="temporaryUpdateTag(i, $event)">
+            </div>
+            <!-- Plus -->
+            <i *ngIf="isEditing" class="material-icons" (click)="addTag()">add</i>
+        </div>
+
+        <!-- skill description -->
+        <p *ngIf="!model.isDescriptionInput" class="description editable" (click)="isEditing ? model.isDescriptionInput = true : false">{{ model.skillDescription }}</p>
+        <textarea *ngIf="isEditing && model.isDescriptionInput" [value]="model.skillDescription" class="description-input"
+        (keyup.enter)="temporaryUpdateDescription($event)"></textarea>
+    </div>
+</div>

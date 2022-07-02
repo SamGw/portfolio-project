@@ -1,0 +1,127 @@
+/*
+vh: (viewport height) L'unité de longueur CSS vh est relative à la hauteur du bloc conteneur initial. vh est égale à 1% de cette dernière
+vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du bloc conteneur initial. vw est égale à 1% de cette dernière.
+*/
+
+.skill-card {
+    position: relative;
+    width:25vw;
+    max-width: 500px;
+    height:15rem;
+    border:solid 1px lightgray;
+    border-radius:30px;
+}
+
+.editing {
+    filter:brightness(95%)
+}
+
+.editing .editable {
+    cursor: pointer;
+}
+
+.inner {
+    margin-left:2vw;
+    margin-right:2vw;
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
+
+.flex-column{
+    display: flex;
+    /* flex-direction: column; */
+}
+
+/* Icons */
+.edit-icon {
+    position: absolute;
+    left: 90%;
+    top:9%;
+    cursor:pointer;
+
+    font-size: 2em;
+}
+
+.editing-icon-zone{
+    position: absolute;
+    left: 90%;
+    top:6%;
+    cursor:pointer;
+    
+    filter:brightness(110%);
+}
+
+.small-icon{
+    position:absolute;
+    font-size: 1.5em!important;
+    left:90%;
+    top:-10%;
+
+}
+.editing-icon{
+    font-size: 2em;
+}
+
+.red{
+    color:red;
+}
+
+.green{
+    color:green;
+}
+
+.editing-icon:hover{
+    filter:brightness(70%)
+}
+
+.edit-icon:hover {
+    filter: brightness(150%);
+}
+
+.centered {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Tags */
+.tags-zone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tag{
+    position:relative;
+    width:5.5vw;
+    height:2rem;
+    border-radius:30px;
+
+    font-size: 0.75em;
+    font-weight: 500;
+
+    margin-right:0.8vw;
+    background-color: #EDEDED;
+}
+
+/* Inputs */
+.title-input{
+    width:80%;
+    background:none;
+}
+
+.tag-input{
+    width:100%;
+    background:none;
+}
+
+
+.description-input{
+    width: 100%;
+    background:none;
+    height: 9vh;
+}
+
+.description {
+    margin-top:5%;
+}
