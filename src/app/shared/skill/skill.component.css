@@ -16,6 +16,10 @@ vw: (viewport width) L'unité de longueur CSS vw est relative à la largeur du b
     filter:brightness(95%)
 }
 
+.editing .editable {
+    cursor: pointer;
+}
+
 .inner {
     margin-left:2vw;
     margin-right:2vw;

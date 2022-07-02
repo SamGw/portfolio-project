@@ -19,7 +19,7 @@
     background-color: #F1F6FF;
 }
 
-.editable {
+.editing .editable {
     cursor: pointer;
 }
 

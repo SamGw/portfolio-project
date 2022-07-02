@@ -3,7 +3,7 @@
     <!-- margins -->
     <div class="inner">
         <!-- skill title -->
-        <h4 *ngIf="!model.isTitleInput" class="semi-bold" (click)="isEditing ? model.isTitleInput = true : false">{{model.skillTitle}}</h4>
+        <h4 *ngIf="!model.isTitleInput" class="semi-bold editable" (click)="isEditing ? model.isTitleInput = true : false">{{model.skillTitle}}</h4>
         <input *ngIf="isEditing && model.isTitleInput" [value]="model.skillTitle" class="title-input" (keyup.enter)="temporaryUpdateTitle($event)">
         <!-- edit icons -->
         <i *ngIf="isEditable && !isEditing" class="material-icons edit-icon" (click)="edit()">edit</i>
@@ -14,7 +14,7 @@
 
         <!-- tags -->
         <div class="tags-zone">
-            <div *ngFor="let tag of model.tags; let i = index" class="tag centered" (click)="isEditing ? tag.isInput = true : false">
+            <div *ngFor="let tag of model.tags; let i = index" class="tag centered editable" (click)="isEditing ? tag.isInput = true : false">
                 <i *ngIf="isEditing" class="material-icons editing-icon red small-icon" (click)="destroyTag(i)">close</i>
                 <!-- tag value -->
                 <div *ngIf="!tag.isInput">
@@ -28,7 +28,7 @@
         </div>
 
         <!-- skill description -->
-        <p *ngIf="!model.isDescriptionInput" class="description" (click)="isEditing ? model.isDescriptionInput = true : false">{{ model.skillDescription }}</p>
+        <p *ngIf="!model.isDescriptionInput" class="description editable" (click)="isEditing ? model.isDescriptionInput = true : false">{{ model.skillDescription }}</p>
         <textarea *ngIf="isEditing && model.isDescriptionInput" [value]="model.skillDescription" class="description-input"
         (keyup.enter)="temporaryUpdateDescription($event)"></textarea>
     </div>

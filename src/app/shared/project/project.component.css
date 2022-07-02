@@ -8,6 +8,10 @@
     /* border-radius:30px; */
 }
 
+.editing .editable{
+    cursor: pointer;
+}
+
 .project-card.expand {
     height:40rem;
 }
@@ -29,6 +33,8 @@
 .see-more{
     display: inline-flex;
     align-items: center;
+    cursor: pointer;
+    margin-right:auto;
 }
 
 .see-more:hover{
